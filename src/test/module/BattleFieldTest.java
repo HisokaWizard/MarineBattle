@@ -14,8 +14,9 @@ public class BattleFieldTest {
             }
         } catch (Error error) {
             System.out.println(error);
+            return;
         }
 
-        System.out.println("BattleField: Success");
+        //System.out.println("BattleField: Success");
     }
 }

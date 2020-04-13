@@ -1,35 +1,62 @@
 package com.BattleField;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class BattleField {
     private Cell [][] battleField;
+    private ArrayList<Ship> shipList = new ArrayList<Ship>();
+    private final int fieldSize = 10;
+
+    public void fightProcess() {
+        if (this.shipList.size() != 10 && this.getBattleField().length != 0) {
+            return;
+        }
+        Integer amountOfAttack = 0;
+        while(true) {
+            Scanner inputAttackPosition = new Scanner(System.in);
+            System.out.print("Set cell: ");
+            String position = inputAttackPosition.nextLine();
+            amountOfAttack++;
+            for (Integer i = 0; i < this.shipList.size(); i++) {
+                Ship ship = this.shipList.get(i);
+                String result = ship.checkAttack(position);
+                if (result == "Destroyed: " + ship.getShipId()) {
+                    this.shipList.remove(ship);
+                }
+                System.out.println(result);
+            }
+            if (this.shipList.size() == 0) {
+                System.out.println("You win: " + amountOfAttack + " tries");
+                break;
+            }
+        }
+    }
 
     public void generateBattleField() {
         this.battleField = this.generateEmptyField();
+        for (Integer i = 0; i < 3; i++) {
+            while (true) {
+                if(this.generateMiddleShip(2, i)) {
+                    break;
+                }
+            }
+        }
         while (true) {
-            if(this.generateHugeShips(4)) {
+            if(this.generateHugeShips(4, 1)) {
                 break;
             }
         }
         for (Integer i = 0; i < 2; i++) {
             while (true) {
-                if(this.generateHugeShips(3)) {
-                    break;
-                }
-            }
-        }
-        for (Integer i = 0; i < 3; i++) {
-            while (true) {
-                if(this.generateMiddleShip()) {
+                if(this.generateHugeShips(3, i)) {
                     break;
                 }
             }
         }
         for (Integer i = 0; i < 4; i++) {
             while (true) {
-                if(this.generateLittleShip()) {
+                if(this.generateLittleShip(1, i)) {
                     break;
                 }
             }
@@ -41,10 +68,10 @@ public class BattleField {
     }
 
     private Cell[][] generateEmptyField() {
-        final int fieldSize = 10;
-        Cell [][] field = new Cell[fieldSize][fieldSize];
-        for (Integer indexX = 0; indexX < fieldSize; indexX++) {
-            for (Integer indexY = 0; indexY < fieldSize; indexY++) {
+
+        Cell [][] field = new Cell[this.fieldSize][this.fieldSize];
+        for (Integer indexX = 0; indexX < this.fieldSize; indexX++) {
+            for (Integer indexY = 0; indexY < this.fieldSize; indexY++) {
                 field[indexX][indexY] = new Cell();
                 field[indexX][indexY].setAddressId(indexX.toString() + indexY.toString());
                 field[indexX][indexY].setNeighbors(this.selectNeighbors(indexX, indexY));
@@ -55,8 +82,8 @@ public class BattleField {
         return field;
     }
 
-    private String[] selectNeighbors(Integer indexX, Integer indexY) {
-        List<String> neighbors = new ArrayList<String>();
+    private ArrayList<String> selectNeighbors(Integer indexX, Integer indexY) {
+        ArrayList<String> neighbors = new ArrayList<String>();
         if (indexX - 1 >= 0) {
             Integer newIndexX = indexX - 1;
             neighbors.add(newIndexX.toString() + indexY.toString());
@@ -93,59 +120,54 @@ public class BattleField {
             Integer newIndexY = indexY + 1;
             neighbors.add(newIndexX.toString() + newIndexY.toString());
         }
-        return neighbors.toArray(new String[neighbors.size()]);
+        return neighbors;
     }
 
-    private Boolean generateHugeShips(Integer size) {
+    private Boolean generateHugeShips(Integer size, Integer number) {
         Integer [] coordinate = this.generateShipBaseCoordinate();
         Boolean isShipCreated = false;
         Boolean shipNotClimb = false;
-        for (Integer x = 0; x < 10; x++) {
+        for (Integer x = 0; x < this.fieldSize; x++) {
             if (shipNotClimb || isShipCreated) {
                 break;
             }
-            for (Integer y = 0; y < 10; y++) {
+            for (Integer y = 0; y < this.fieldSize; y++) {
                 Boolean freeCell = !this.battleField[x][y].getShip() && !this.battleField[x][y].getBorder();
                 if (coordinate[0] == x && coordinate[1] == y && freeCell) {
-                    this.battleField[x][y].setShip(true);
                     if (size == 4) {
                         if (x + 3 <= 9) {
                             if (this.checkAllShipLengthFree(x, y, size, true, true)) {
-                                this.battleField[x + 1][y].setShip(true);
-                                this.battleField[x + 2][y].setShip(true);
-                                this.battleField[x + 3][y].setShip(true);
+                                Integer [] valuesX = {x, x + 1, x + 2, x + 3};
+                                Integer [] valuesY = {y, y, y, y};
+                                this.initShip(valuesX, valuesY, size, number);
                             } else {
-                                this.battleField[x][y].setShip(false);
                                 shipNotClimb = true;
                                 break;
                             }
                         } else if (x - 3 >= 0) {
                             if (this.checkAllShipLengthFree(x, y, size, false, true)) {
-                                this.battleField[x - 1][y].setShip(true);
-                                this.battleField[x - 2][y].setShip(true);
-                                this.battleField[x - 3][y].setShip(true);
+                                Integer [] valuesX = {x, x - 1, x - 2, x - 3};
+                                Integer [] valuesY = {y, y, y, y};
+                                this.initShip(valuesX, valuesY, size, number);
                             } else {
-                                this.battleField[x][y].setShip(false);
                                 shipNotClimb = true;
                                 break;
                             }
                         } else if (y + 3 <= 9) {
                             if (this.checkAllShipLengthFree(x, y, size, true, false)) {
-                                this.battleField[x][y + 1].setShip(true);
-                                this.battleField[x][y + 2].setShip(true);
-                                this.battleField[x][y + 3].setShip(true);
+                                Integer [] valuesX = {x, x, x, x};
+                                Integer [] valuesY = {y, y + 1, y + 2, y + 3};
+                                this.initShip(valuesX, valuesY, size, number);
                             } else {
-                                this.battleField[x][y].setShip(false);
                                 shipNotClimb = true;
                                 break;
                             }
                         } else if (y - 3 >= 0) {
                             if (this.checkAllShipLengthFree(x, y, size, false, false)) {
-                                this.battleField[x][y - 1].setShip(true);
-                                this.battleField[x][y - 2].setShip(true);
-                                this.battleField[x][y - 3].setShip(true);
+                                Integer [] valuesX = {x, x, x, x};
+                                Integer [] valuesY = {y, y - 1, y - 2, y - 3};
+                                this.initShip(valuesX, valuesY, size, number);
                             }  else {
-                                this.battleField[x][y].setShip(false);
                                 shipNotClimb = true;
                                 break;
                             }
@@ -156,37 +178,37 @@ public class BattleField {
                     if (size == 3) {
                         if (x + 2 <= 9) {
                             if (this.checkAllShipLengthFree(x, y, size, true, true)) {
-                                this.battleField[x + 1][y].setShip(true);
-                                this.battleField[x + 2][y].setShip(true);
+                                Integer [] valuesX = {x, x + 1, x + 2};
+                                Integer [] valuesY = {y, y, y};
+                                this.initShip(valuesX, valuesY, size, number);
                             } else {
-                                this.battleField[x][y].setShip(false);
                                 shipNotClimb = true;
                                 break;
                             }
                         } else if (x - 2 >= 0) {
                             if (this.checkAllShipLengthFree(x, y, size, false, true)) {
-                                this.battleField[x - 1][y].setShip(true);
-                                this.battleField[x - 2][y].setShip(true);
+                                Integer [] valuesX = {x, x - 1, x - 2};
+                                Integer [] valuesY = {y, y, y};
+                                this.initShip(valuesX, valuesY, size, number);
                             } else {
-                                this.battleField[x][y].setShip(false);
                                 shipNotClimb = true;
                                 break;
                             }
                         } else if (y + 2 <= 9) {
                             if (this.checkAllShipLengthFree(x, y, size, true, false)) {
-                                this.battleField[x][y + 1].setShip(true);
-                                this.battleField[x][y + 2].setShip(true);
+                                Integer [] valuesX = {x, x, x};
+                                Integer [] valuesY = {y, y + 1, y + 2};
+                                this.initShip(valuesX, valuesY, size, number);
                             } else {
-                                this.battleField[x][y].setShip(false);
                                 shipNotClimb = true;
                                 break;
                             }
                         } else if (y - 2 >= 0) {
                             if (this.checkAllShipLengthFree(x, y, size, false, false)) {
-                                this.battleField[x][y - 1].setShip(true);
-                                this.battleField[x][y - 2].setShip(true);
+                                Integer [] valuesX = {x, x, x};
+                                Integer [] valuesY = {y, y - 1, y - 2};
+                                this.initShip(valuesX, valuesY, size, number);
                             } else {
-                                this.battleField[x][y].setShip(false);
                                 shipNotClimb = true;
                                 break;
                             }
@@ -199,6 +221,45 @@ public class BattleField {
         }
         this.setNeighbors();
         return isShipCreated;
+    }
+
+    private void initShip(Integer [] valuesX, Integer [] ValuesY, Integer size, Integer number) {
+        Ship ship = new Ship();
+        ArrayList<String> positions = new ArrayList<String>();
+        if (size == 4) {
+            for (Integer i = 0; i < 4; i++) {
+                positions.add(valuesX[i].toString() + ValuesY[i].toString());
+                this.battleField[valuesX[i]][ValuesY[i]].setShip(true);
+            }
+            ship.setShipPositions(positions);
+            ship.setShipId("Huge");
+            this.shipList.add(ship);
+        }
+        if (size == 3) {
+            for (Integer i = 0; i < 3; i++) {
+                positions.add(valuesX[i].toString() + ValuesY[i].toString());
+                this.battleField[valuesX[i]][ValuesY[i]].setShip(true);
+            }
+            ship.setShipPositions(positions);
+            ship.setShipId("Big_" + number);
+            this.shipList.add(ship);
+        }
+        if (size == 2) {
+            for (Integer i = 0; i < 2; i++) {
+                positions.add(valuesX[i].toString() + ValuesY[i].toString());
+                this.battleField[valuesX[i]][ValuesY[i]].setShip(true);
+            }
+            ship.setShipPositions(positions);
+            ship.setShipId("Middle_" + number);
+            this.shipList.add(ship);
+        }
+        if (size == 1) {
+            positions.add(valuesX[0].toString() + ValuesY[0].toString());
+            this.battleField[valuesX[0]][ValuesY[0]].setShip(true);
+            ship.setShipPositions(positions);
+            ship.setShipId("Little_" + number);
+            this.shipList.add(ship);
+        }
     }
 
     private Boolean checkAllShipLengthFree(Integer x, Integer y, Integer size, Boolean plus, Boolean horizontal) {
@@ -259,31 +320,34 @@ public class BattleField {
         return true;
     }
 
-    private Boolean generateMiddleShip() {
+    private Boolean generateMiddleShip(Integer size, Integer number) {
         Integer [] coordinate = this.generateShipBaseCoordinate();
         Boolean isShipCreated = false;
-        for (Integer x = 0; x < 10; x++) {
+        for (Integer x = 0; x < this.fieldSize; x++) {
             if (isShipCreated) {
                 break;
             }
-            for (Integer y = 0; y < 10; y++) {
+            for (Integer y = 0; y < this.fieldSize; y++) {
                 Boolean freeCell = !this.battleField[x][y].getShip() && !this.battleField[x][y].getBorder();
                 if (coordinate[0] == x && coordinate[1] == y && freeCell) {
-                    this.battleField[x][y].setShip(true);
                     if (x - 1 >= 0 && !this.battleField[x - 1][y].getShip() && !this.battleField[x - 1][y].getBorder()) {
-                        this.battleField[x - 1][y].setShip(true);
+                        Integer [] valuesX = {x, x - 1}; Integer [] valuesY = {y, y};
+                        this.initShip(valuesX, valuesY, size, number);
                         isShipCreated = true;
                         break;
                     } else if (x + 1 <= 9 && !this.battleField[x + 1][y].getShip() && !this.battleField[x + 1][y].getBorder()) {
-                        this.battleField[x + 1][y].setShip(true);
+                        Integer [] valuesX = {x, x + 1}; Integer [] valuesY = {y, y};
+                        this.initShip(valuesX, valuesY, size, number);
                         isShipCreated = true;
                         break;
                     } else if (y - 1 >= 0 && !this.battleField[x][y - 1].getShip() && !this.battleField[x][y - 1].getBorder()) {
-                        this.battleField[x][y - 1].setShip(true);
+                        Integer [] valuesX = {x, x}; Integer [] valuesY = {y, y - 1};
+                        this.initShip(valuesX, valuesY, size, number);
                         isShipCreated = true;
                         break;
                     } else if (y + 1 <= 9 && !this.battleField[x][y + 1].getShip() && !this.battleField[x][y + 1].getBorder()) {
-                        this.battleField[x][y + 1].setShip(true);
+                        Integer [] valuesX = {x, x}; Integer [] valuesY = {y, y + 1};
+                        this.initShip(valuesX, valuesY, size, number);
                         isShipCreated = true;
                         break;
                     }
@@ -294,17 +358,18 @@ public class BattleField {
         return isShipCreated;
     }
 
-    private Boolean generateLittleShip() {
+    private Boolean generateLittleShip(Integer size, Integer number) {
         Integer [] coordinate = this.generateShipBaseCoordinate();
         Boolean isShipCreated = false;
-        for (Integer x = 0; x < 10; x++) {
+        for (Integer x = 0; x < this.fieldSize; x++) {
             if (isShipCreated) {
                 break;
             }
-            for (Integer y = 0; y < 10; y++) {
+            for (Integer y = 0; y < this.fieldSize; y++) {
                 Boolean freeCell = !this.battleField[x][y].getShip() && !this.battleField[x][y].getBorder();
                 if (coordinate[0] == x && coordinate[1] == y && freeCell) {
-                    this.battleField[x][y].setShip(true);
+                    Integer [] valuesX = {x}; Integer [] valuesY = {y};
+                    this.initShip(valuesX, valuesY, size, number);
                     isShipCreated = true;
                     break;
                 }
@@ -315,18 +380,17 @@ public class BattleField {
     }
 
     private void setNeighbors() {
-        for (Integer x = 0; x < 10; x++) {
-            for (Integer y = 0; y < 10; y++) {
+        for (Integer x = 0; x < this.fieldSize; x++) {
+            for (Integer y = 0; y < this.fieldSize; y++) {
                 if (this.battleField[x][y].getShip()) {
-                    Integer amountOfNeighbor = this.battleField[x][y].getNeighbors().length;
-                    String [] neighbors = this.battleField[x][y].getNeighbors();
-                    for (int n = 0; n < amountOfNeighbor; n++) {
-                        Integer indexX = Integer.decode(Character.toString(neighbors[n].charAt(0)));
-                        Integer indexY = Integer.decode(Character.toString(neighbors[n].charAt(1)));
+                    ArrayList<String> neighbors = this.battleField[x][y].getNeighbors();
+                    neighbors.forEach(neighbor -> {
+                        Integer indexX = Integer.parseInt(Character.toString(neighbor.charAt(0)));
+                        Integer indexY = Integer.parseInt(Character.toString(neighbor.charAt(1)));
                         if (!this.battleField[indexX][indexY].getShip()) {
                             this.battleField[indexX][indexY].setBorder(true);
                         }
-                    }
+                    });
                 }
             }
         }
