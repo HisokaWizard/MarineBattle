@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="def371de-40e1-4205-8d3b-bf1ebb6a021a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/BattleField/Ship.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/module/ShipTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MarineBattle/com/BattleField/BattleField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MarineBattle/com/BattleField/BattleField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MarineBattle/com/BattleField/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MarineBattle/com/BattleField/Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MarineBattle/test/module/CellTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MarineBattle/test/module/CellTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/BattleField/BattleField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BattleField/BattleField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/BattleField/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BattleField/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/module/BattleFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/module/BattleFieldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/module/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/module/CellTest.java" afterDir="false" />
-    </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="def371de-40e1-4205-8d3b-bf1ebb6a021a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,96 +9,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="MarineBattle" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/BattleField/BattleField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#169#175#0" expanded="true" />
-                <element signature="e#951#952#0" expanded="true" />
-                <element signature="e#990#991#0" expanded="true" />
-                <element signature="e#1776#1784#0" expanded="true" />
-                <element signature="e#9750#9758#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/BattleField/Ship.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#350#351#0" expanded="true" />
-                <element signature="e#379#380#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/module/BattleFieldTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/module/CellTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#223#231#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/BattleField/Cell.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
-              <folding>
-                <element signature="e#609#610#0" expanded="true" />
-                <element signature="e#646#647#0" expanded="true" />
-                <element signature="e#1333#1334#0" expanded="true" />
-                <element signature="e#1362#1363#0" expanded="true" />
-                <element signature="e#1579#1580#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -124,80 +20,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/com/BattleField.java" />
-        <option value="$PROJECT_DIR$/src/com/BattleField/Cell.java" />
-        <option value="$PROJECT_DIR$/src/test/module/CellTest.java" />
-        <option value="$PROJECT_DIR$/src/test/module/BattleFieldTest.java" />
-        <option value="$PROJECT_DIR$/src/com/BattleField/Ship.java" />
-        <option value="$PROJECT_DIR$/src/test/module/ShipTest.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/BattleField/BattleField.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1928" />
-    <option name="y" value="-11" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
-  </component>
+  <component name="ProjectId" id="1aUaqTd1X0GEIvL9FxlL61DUMAm" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="MarineBattle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MarineBattle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MarineBattle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MarineBattle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MarineBattle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MarineBattle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="BattleField" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MarineBattle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MarineBattle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="module" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -248,179 +81,43 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-1928" y="-11" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49756888" visible="true" weight="0.2553305" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.50082916" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="SBT Execute" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49946696" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.4989339" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info active="true" anchor="bottom" id="Debug" order="7" sideWeight="0.40565032" visible="true" weight="0.31444445" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" x="658" y="249" width="1876" height="611" id="Run" order="11" sideWeight="0.5943497" side_tool="true" visible="true" weight="0.31444445" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/BattleField/Ship.java</url>
-          <line>41</line>
-          <properties />
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/BattleField/Ship.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/BattleField/Ship.java</url>
-          <line>34</line>
-          <properties />
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/BattleField.java" />
-    <entry file="jar://C:/Program Files/jdk-14/lib/src.zip!/java.base/java/util/Collection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="374" column="12" selection-start-line="374" selection-start-column="12" selection-end-line="374" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/BattleField/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
-          <folding>
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#646#647#0" expanded="true" />
-            <element signature="e#1333#1334#0" expanded="true" />
-            <element signature="e#1362#1363#0" expanded="true" />
-            <element signature="e#1579#1580#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/jdk-14/lib/src.zip!/java.base/java/util/function/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/jdk-14/lib/src.zip!/java.base/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="424" column="13" selection-start-line="424" selection-start-column="13" selection-end-line="424" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/module/BattleFieldTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/module/CellTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#223#231#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/jdk-14/lib/src.zip!/java.base/java/util/Scanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="564" column="30" selection-start-line="564" selection-start-column="19" selection-end-line="564" selection-end-column="30" />
-          <folding>
-            <element signature="e#22850#22851#0" expanded="true" />
-            <element signature="e#22921#22922#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/module/ShipTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#260#268#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/BattleField/Ship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/BattleField/BattleField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#169#175#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#990#991#0" expanded="true" />
-            <element signature="e#1776#1784#0" expanded="true" />
-            <element signature="e#9750#9758#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="272" key="GridCell.Tab.0.bottom" timestamp="1586964932251">
+      <screen x="-1920" y="-3" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="272" key="GridCell.Tab.0.bottom/-1920.-3.1920.1040/0.0.1920.1040@-1920.-3.1920.1040" timestamp="1586964932251" />
+    <state width="1877" height="272" key="GridCell.Tab.0.center" timestamp="1586964932251">
+      <screen x="-1920" y="-3" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="272" key="GridCell.Tab.0.center/-1920.-3.1920.1040/0.0.1920.1040@-1920.-3.1920.1040" timestamp="1586964932251" />
+    <state width="1877" height="272" key="GridCell.Tab.0.left" timestamp="1586964932250">
+      <screen x="-1920" y="-3" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="272" key="GridCell.Tab.0.left/-1920.-3.1920.1040/0.0.1920.1040@-1920.-3.1920.1040" timestamp="1586964932250" />
+    <state width="1877" height="272" key="GridCell.Tab.0.right" timestamp="1586964932251">
+      <screen x="-1920" y="-3" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="272" key="GridCell.Tab.0.right/-1920.-3.1920.1040/0.0.1920.1040@-1920.-3.1920.1040" timestamp="1586964932251" />
+    <state width="1877" height="451" key="GridCell.Tab.1.bottom" timestamp="1586794365529">
+      <screen x="-1920" y="-3" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="451" key="GridCell.Tab.1.bottom/-1920.-3.1920.1040/0.0.1920.1040@-1920.-3.1920.1040" timestamp="1586794365529" />
+    <state width="1877" height="451" key="GridCell.Tab.1.center" timestamp="1586794365529">
+      <screen x="-1920" y="-3" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="451" key="GridCell.Tab.1.center/-1920.-3.1920.1040/0.0.1920.1040@-1920.-3.1920.1040" timestamp="1586794365529" />
+    <state width="1877" height="451" key="GridCell.Tab.1.left" timestamp="1586794365528">
+      <screen x="-1920" y="-3" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="451" key="GridCell.Tab.1.left/-1920.-3.1920.1040/0.0.1920.1040@-1920.-3.1920.1040" timestamp="1586794365528" />
+    <state width="1877" height="451" key="GridCell.Tab.1.right" timestamp="1586794365529">
+      <screen x="-1920" y="-3" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="451" key="GridCell.Tab.1.right/-1920.-3.1920.1040/0.0.1920.1040@-1920.-3.1920.1040" timestamp="1586794365529" />
+    <state x="-1253" y="119" width="585" height="795" key="find.popup" timestamp="1586793808363">
+      <screen x="-1920" y="-3" width="1920" height="1040" />
+    </state>
+    <state x="-1253" y="119" width="585" height="795" key="find.popup/-1920.-3.1920.1040/0.0.1920.1040@-1920.-3.1920.1040" timestamp="1586793808363" />
   </component>
   <component name="masterDetails">
     <states>

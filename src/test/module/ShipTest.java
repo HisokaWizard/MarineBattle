@@ -14,7 +14,7 @@ public class ShipTest {
             positions.add(i.toString() + 4);
         }
         ship.setShipPositions(positions);
-
+        Integer index = positions.indexOf("04");
         String [] inputPositions = {"58", "04", "14", "24", "34", "44"};
 
         for (Integer i = 0; i < 6; i++) {
