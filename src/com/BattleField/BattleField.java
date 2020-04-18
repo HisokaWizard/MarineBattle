@@ -1,5 +1,6 @@
 package com.BattleField;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,31 +15,82 @@ public class BattleField {
         }
         Integer amountOfAttack = 0;
         while(true) {
+            this.printFieldPositionsAndResult();
             Scanner inputAttackPosition = new Scanner(System.in);
             System.out.print("Set cell: ");
             String position = inputAttackPosition.nextLine();
+            this.clearConsole();
             amountOfAttack++;
             String result = new String();
             for (Integer i = 0; i < this.shipList.size(); i++) {
                 Ship ship = this.shipList.get(i);
                 result = ship.checkAttack(position);
                 if (result.equals("Destroyed: " + ship.getShipId())) {
+                    this.fillInUsedPosition(position, result, ship.getShipId());
                     this.shipList.remove(ship);
                     System.out.println(result);
                     break;
                 }
                 if (result.equals("Hurt")) {
+                    this.fillInUsedPosition(position, result, ship.getShipId());
                     System.out.println(result);
                     break;
                 }
             }
             if (result.equals("Past")) {
+                this.fillInUsedPosition(position, result, null);
                 System.out.println(result);
             }
 
             if (this.shipList.size() == 0) {
                 System.out.println("You win: " + amountOfAttack + " tries");
                 break;
+            }
+        }
+    }
+
+    public final static void clearConsole() {
+        for(int i = 0; i < 100; i++) {
+            System.out.print("\n");
+        }
+    }
+
+    private void printFieldPositionsAndResult() {
+        for (Integer y = 0; y < 10; y++) {
+            for (Integer x = 0; x < 10; x++) {
+                System.out.print(this.battleField[x][y].getAddressId() + " ");
+            }
+            System.out.print("\t");
+            for (Integer x = 0; x < 10; x++) {
+                if (this.battleField[x][y].getWasUsed()) {
+                    System.out.print(" # ");
+                } else {
+                    System.out.print(" * ");
+                }
+            }
+            System.out.println("");
+        }
+    }
+
+    private void fillInUsedPosition(String position, String result, String shipId) {
+        Boolean found = false;
+        for (Cell[] cells: this.battleField) {
+            if(found) {
+                break;
+            }
+            for(Cell cell: cells) {
+                if (position.equals(cell.getAddressId())) {
+                    cell.setWasUsed(true);
+                    if (result.equals("Destroyed: " + shipId)) {
+                        for(String id: cell.getNeighbors()) {
+                            Integer x = Integer.parseInt(Character.toString(id.charAt(0)));
+                            Integer y = Integer.parseInt(Character.toString(id.charAt(1)));
+                            this.battleField[x][y].setWasUsed(true);
+                        }
+                    }
+                    found = true;
+                    break;
+                }
             }
         }
     }
@@ -87,6 +139,7 @@ public class BattleField {
                 field[x][y].setNeighbors(this.selectNeighbors(x, y));
                 field[x][y].setBorder(false);
                 field[x][y].setShip(false);
+                field[x][y].setWasUsed(false);
             }
         }
         return field;
